@@ -13,6 +13,9 @@ import com.smsdiscord.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.tkporter.sendsms.SendSMSPackage;
+import com.react.SmsPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
