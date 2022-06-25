@@ -6018,7 +6018,12 @@
   "resolved" "https://registry.npmjs.org/react-native-sms/-/react-native-sms-1.11.0.tgz"
   "version" "1.11.0"
 
-"react-native@*", "react-native@>=0.47.0", "react-native@0.69.0":
+"react-native-sqlite-storage@^6.0.1":
+  "integrity" "sha512-1tDFjrint6X6qSYKf3gDyz+XB+X79jfiL6xTugKHPRtF0WvqMtVgdLuNqZunIXjNEvNtNVEbXaeZ6MsguFu00A=="
+  "resolved" "https://registry.npmjs.org/react-native-sqlite-storage/-/react-native-sqlite-storage-6.0.1.tgz"
+  "version" "6.0.1"
+
+"react-native@*", "react-native@>=0.14.0", "react-native@>=0.47.0", "react-native@0.69.0":
   "integrity" "sha512-TBaoNMaxxVLRNNxNXmi8sauxSv6LXF5O6apoUPHVYC1Tr9dP0DqiQP2ngHHJM9ysxxIkX47OTho028HRbkgTCA=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.69.0.tgz"
   "version" "0.69.0"

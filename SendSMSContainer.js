@@ -165,3 +165,14 @@ class SendSMSContainer extends Component {
 }
 
 export default SendSMSContainer;
+
+
+
+
+import { getDBConnection, createTable } from './db';
+const App = () => {
+    const loadDataCallback = useCallback(async () => {
+        const db = await getDBConnection();
+        await createTable(db);
+    }, []);
+}

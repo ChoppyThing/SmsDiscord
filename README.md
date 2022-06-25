@@ -12,3 +12,7 @@ https://support.discord.com/hc/fr/articles/212889058-API-officiel-de-Discord
 
 Background service
 https://www.npmjs.com/package/react-native-background-actions
+
+
+Database
+https://blog.logrocket.com/using-sqlite-with-react-native/
