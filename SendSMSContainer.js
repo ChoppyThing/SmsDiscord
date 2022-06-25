@@ -11,10 +11,12 @@ class SendSMSContainer extends Component {
         };
     }
 
-    // Function to send message
+    componentDidMount() {
+        this.pollSms()
+    }
+
     sendSMS = () => {
         console.log('sendSMS');
-        // alert('clicked');
         SendSMS.send({
             body: 'Hello test',
             recipients: ['0650762455'],
@@ -32,19 +34,28 @@ class SendSMSContainer extends Component {
         });
     }
 
+    pollSms = () => {
+        let that;
+        if (that === undefined) {
+            that = this;
+        }
 
-    // Function to read particular message from inbox with id
+        // const interval = setInterval(() => {
+        //     setInterval(that.getSMS(), 3000);
+        //   }, 3000);
+        //   return () => clearInterval(interval);
+        setTimeout(function(){
+            that.getSMS();
+            that.pollSms();
+        } , 60000)
+    }
+
     getSMS = () => {
         let filter = {
-            box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
-            // the next 4 filters should NOT be used together, they are OR-ed so pick one
-            read: 1, // 0 for unread SMS, 1 for SMS already read
-            //_id: 1234, // specify the msg id
-            //address: '+917691008701', // sender's phone number
-            //body: 'How are you shadman', // content to match
-            // the next 2 filters can be used for pagination
-            indexFrom: 0, // start from index 0
-            maxCount: 10, // count of SMS to return each time
+            box: 'inbox',
+            read: 0,
+            indexFrom: 0,
+            maxCount: 10,
         };
         SmsAndroid.list(
             JSON.stringify(filter),
@@ -54,19 +65,10 @@ class SendSMSContainer extends Component {
             (count, smsList) => {
                 console.log('Count: ', count);
                 console.log('List: ', smsList);
-                var arr = JSON.parse(smsList);
-
-                arr.forEach(function (object) {
-                    console.log('Object: ' + object);
-                    console.log('-->' + object.date);
-                    console.log('-->' + object.body);
-                    alert('your message with selected id is --->' + object.body)
-                });
             },
         );
     }
 
-    // Function to delete particular message from inbox with id
     deleteSMS = () => {
         console.log('deleteSMS');
         SmsAndroid.delete(
