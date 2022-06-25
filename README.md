@@ -8,3 +8,7 @@ https://github.com/tkporter/react-native-sms/
 https://javascript.plainenglish.io/react-native-foreground-service-f7fc8e617fba
 
 https://support.discord.com/hc/fr/articles/212889058-API-officiel-de-Discord
+
+
+Background service
+https://www.npmjs.com/package/react-native-background-actions
